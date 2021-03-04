@@ -47,7 +47,7 @@ target = 'Class'
 noClass = data[columns]
 
 #Info in "Class" column
-Y = data[target]
+clss = data[target]
 
 
 #Results
@@ -60,8 +60,8 @@ scores_pred = algorithm.negative_outlier_factor_
 predict[predict == 1] = 0
 predict[predict == -1] = 1
 
-n_errors = (predict != Y).sum()
+n_errors = (predict != clss).sum()
 
 print("Local Outlier Factor: {} errors made".format(n_errors))
-print("Accuracy percentage: {}".format(accuracy_score(Y, predict)*100))
-print(classification_report(Y, predict))
+print("Accuracy percentage: {}".format(accuracy_score(clss, predict)*100))
+print(classification_report(clss, predict))
